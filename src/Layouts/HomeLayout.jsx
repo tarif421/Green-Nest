@@ -5,13 +5,15 @@ import HeroSection from "../Components/HeroSection";
 
 const HomeLayout = () => {
   return (
-    <div>
-      <nav className="w-11/12 mx-auto">
+    <div className="mx-w-[1280px] ">
+      <nav className="">
         <Navbar></Navbar>
-        <HeroSection></HeroSection>
       </nav>
+      <section>
+        <HeroSection></HeroSection>
+      </section>
 
-      <main>
+      <main className="  my-3  ">
         <Outlet></Outlet>
       </main>
       <footer></footer>

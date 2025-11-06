@@ -1,7 +1,15 @@
 import React from "react";
 import { PiPlantFill } from "react-icons/pi";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
+  const link = (
+    <>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/plants">Plants</NavLink>
+      <NavLink to="/profile">My Profile</NavLink>
+    </>
+  );
   return (
     <div className="navbar  bg-base-100  shadow-sm flex ">
       <div className="navbar-start">
@@ -27,32 +35,16 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {link}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl "><PiPlantFill  className="text-green-700"/> <span className="text-green-900">Green Nest</span></a>
+        <a className="btn btn-ghost text-xl ">
+          <PiPlantFill className="text-green-700" />{" "}
+          <span className="text-green-900">Green Nest</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li></li>
-          <li>
-            <a>Item 2</a>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn btn bg-teal-800 text-white">Login</a>

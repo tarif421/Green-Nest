@@ -1,0 +1,14 @@
+.navbar a {
+  color: #0e6f58;
+  font-size: medium;
+  margin-left: 20px;
+}
+.navbar a.active {
+
+  padding: 2px;
+  border-radius: 2px;
+}
+.navbar a:hover {
+  background-color: #e6ffe6;
+  color: #006400;
+}
