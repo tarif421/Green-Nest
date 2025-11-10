@@ -1,5 +1,7 @@
 import React from "react";
 import { PiPlantFill } from "react-icons/pi";
+import { Link } from "react-router";
+
 import { NavLink } from "react-router";
 
 const Navbar = () => {
@@ -47,7 +49,11 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-teal-100 text-white">Login</a>
+        <Link to="/auth/login">
+          <button className="btn bg-teal-100 text-green hover:bg-teal-400">
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );

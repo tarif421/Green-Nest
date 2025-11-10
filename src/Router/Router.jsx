@@ -6,6 +6,8 @@ import Profile from "../Pages/Profile";
 import TopRatedPlants from "../Components/TopRatedPlants";
 import HeroSection from "../Components/HeroSection";
 import PlantDetails from "../Pages/PlantDetails";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../Pages/Login";
 
 export const router = createBrowserRouter([
   {
@@ -26,11 +28,21 @@ export const router = createBrowserRouter([
         path: "/plantDetails",
         element: <PlantDetails></PlantDetails>,
       },
+
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
+      },
     ],
   },
-
   {
-    path: "/profile",
-    element: <Profile></Profile>,
+    path: "auth",
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+    ],
   },
 ]);

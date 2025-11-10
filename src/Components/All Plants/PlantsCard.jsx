@@ -21,7 +21,7 @@ const PlantsCard = ({ plant }) => {
 
           <p className="text-sm text-gray-600   ">
             {description.slice(0, 100)}...{" "}
-            <p className="text-black font-semibold">Read More</p>
+            <p className="text-black font-semibold cursor-pointer">Read More</p>
           </p>
         </div>
       </div>
