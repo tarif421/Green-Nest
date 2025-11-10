@@ -1,10 +1,10 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-const TopPlantCard = ({ plant }) => {
-  const { image, plantName, rating, price } = plant;
+const PlantsCard = ({ plant }) => {
+  const { plantName, category, price, rating, description, image } = plant;
   return (
-    <section className="">
+    <>
       <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 ">
         <img src={image} alt={plantName} className="w-full h-48 object-cover" />
         <div className="p-4">
@@ -14,17 +14,19 @@ const TopPlantCard = ({ plant }) => {
 
           <div className="flex justify-between">
             <p className="text-gray-700 mb-1">Price: ${price}</p>
-            <p className="text-yellow-500 mb-2 flex items-center gap-2">
-              {" "}
+            <p className="text-yellow-500 mb-2 flex justify-center-safe items-center gap-2">
               <FaStar /> {rating}
             </p>
           </div>
-          <button className="btn ">View Details</button>
+
+          <p className="text-sm text-gray-600   ">
+            {description.slice(0, 100)}...{" "}
+            <p className="text-black font-semibold">Read More</p>
+          </p>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
-export default TopPlantCard;
-0;
+export default PlantsCard;

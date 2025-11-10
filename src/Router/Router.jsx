@@ -5,6 +5,7 @@ import Plants from "../Pages/Plants";
 import Profile from "../Pages/Profile";
 import TopRatedPlants from "../Components/TopRatedPlants";
 import HeroSection from "../Components/HeroSection";
+import PlantDetails from "../Pages/PlantDetails";
 
 export const router = createBrowserRouter([
   {
@@ -12,20 +13,24 @@ export const router = createBrowserRouter([
     element: <HomeLayout></HomeLayout>,
     children: [
       {
-        path: "",
+        path: "/",
         element: <Home></Home>,
         loader: () => fetch("/plants.json").then((res) => res.json()),
       },
-  
-
       {
         path: "/plants",
         element: <Plants></Plants>,
+        loader: () => fetch("/plants.json").then((res) => res.json()),
       },
       {
-        path: "/profile",
-        element: <Profile></Profile>,
+        path: "/plantDetails",
+        element: <PlantDetails></PlantDetails>,
       },
     ],
+  },
+
+  {
+    path: "/profile",
+    element: <Profile></Profile>,
   },
 ]);
