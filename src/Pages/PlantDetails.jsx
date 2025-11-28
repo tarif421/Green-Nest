@@ -1,7 +1,14 @@
 import React from "react";
+import { useLoaderData } from "react-router";
 
 const PlantDetails = () => {
-  return <div>im details</div>;
+  const plant = useLoaderData();
+
+  return (
+    <>
+      <div></div>
+    </>
+  );
 };
 
 export default PlantDetails;

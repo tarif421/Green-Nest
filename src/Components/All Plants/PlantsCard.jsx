@@ -5,7 +5,7 @@ const PlantsCard = ({ plant }) => {
   const { plantName, category, price, rating, description, image } = plant;
   return (
     <>
-      <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 ">
+      <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 p-5 ">
         <img src={image} alt={plantName} className="w-full h-48 object-cover" />
         <div className="p-4">
           <h2 className="text-xl font-semibold text-green-700 mb-2">

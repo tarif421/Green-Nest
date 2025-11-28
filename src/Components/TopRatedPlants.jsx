@@ -9,7 +9,7 @@ const TopRatedPlants = ({ plants }) => {
       <h2 className=" py-5 bg-green-50 w-[500px] mx-auto mt-20 rounded-2xl shadow-2xs text-3xl font-bold flex justify-center text-yellow-700 ">
         Top Rated Indoor Plants
       </h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mt-10">
+      <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6  mt-10 lg:px-30 md:px-15 sm:px-5">
         {topPlants.map((plant) => (
           <TopPlantCard plant={plant} key={plant.plantId}></TopPlantCard>
         ))}

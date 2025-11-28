@@ -1,10 +1,22 @@
-import React from "react";
+import React, { use } from "react";
 import { PiPlantFill } from "react-icons/pi";
 import { Link } from "react-router";
 
 import { NavLink } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = use(AuthContext);
+  const handleLogout = () => {
+    // console.log("user trying to be logout");
+    logOut()
+      .then(() => {
+        alert("logged out successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const link = (
     <>
       <NavLink to="/">Home</NavLink>
@@ -14,6 +26,7 @@ const Navbar = () => {
   );
   return (
     <div className="navbar  bg-base-100  shadow-sm flex ">
+      <div>{user && user.email}</div>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,12 +61,22 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
+
       <div className="navbar-end">
-        <Link to="/auth/login">
-          <button className="btn bg-teal-100 text-green hover:bg-teal-400">
-            Login
+        {user ? (
+          <button
+            onClick={handleLogout}
+            className="btn bg-teal-100 text-green hover:bg-teal-400"
+          >
+            Logout
           </button>
-        </Link>
+        ) : (
+          <Link to="/auth/login">
+            <button  className="btn bg-teal-100 text-green hover:bg-teal-400">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

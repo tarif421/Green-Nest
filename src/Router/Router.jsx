@@ -8,6 +8,7 @@ import HeroSection from "../Components/HeroSection";
 import PlantDetails from "../Pages/PlantDetails";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       {
         path: "/plantDetails",
         element: <PlantDetails></PlantDetails>,
+        loader: () => fetch("/plants.json").then((res) => res.json()),
       },
 
       {
@@ -42,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "/auth/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
       },
     ],
   },
