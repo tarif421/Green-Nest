@@ -19,9 +19,15 @@ const Navbar = () => {
   };
   const link = (
     <>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/plants">Plants</NavLink>
-      <NavLink to="/profile">My Profile</NavLink>
+      <li>
+        <NavLink className= {({isActive}) => (isActive ? "text-[#0e6f58]  bg-[#00640030] p-2 font-medium rounded-xl":"")} to="/">Home</NavLink>
+      </li>
+   <li>
+       <NavLink  className= {({isActive}) => (isActive ? "text-[#0e6f58]  bg-[#00640030] p-2 font-medium rounded-xl":"")} to="/plants">Plants</NavLink>
+   </li>
+<li>
+        <NavLink  className= {({isActive}) => (isActive ? "text-[#0e6f58]  bg-[#00640030] p-2 font-medium rounded-xl":"")} to="/profile">My Profile</NavLink>
+</li>
     </>
   );
   return (

@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         loader: () => fetch("/plants.json").then((res) => res.json()),
       },
       {
-        path: "/plantDetails",
+        path: "/plantDetails/:plantId",
         element: <PlantDetails></PlantDetails>,
         loader: () => fetch("/plants.json").then((res) => res.json()),
       },

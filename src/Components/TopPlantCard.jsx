@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 
 const TopPlantCard = ({ plant }) => {
-  const { image, plantName, rating, price } = plant;
+  const { image, plantName, rating, price, plantId } = plant;
   return (
     <section className="">
       <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 p-5">
@@ -20,7 +20,7 @@ const TopPlantCard = ({ plant }) => {
               <FaStar /> {rating}
             </p>
           </div>
-          <Link to="/plantDetails">
+          <Link to={`/plantDetails/${plantId}`}>
             <button className="btn ">View Details</button>
           </Link>
         </div>
