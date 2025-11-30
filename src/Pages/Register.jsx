@@ -1,9 +1,12 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
   const { createUser, setUser } = use(AuthContext);
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,17 +14,32 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+
     // console.log(name, photo, email, password);
+
+    if (password.length < 6) {
+      setError("password must be at least 6 characters long");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must contain least one uppercase letter");
+      return;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
+        navigate("/");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage);
+        setError(error.massage);
       });
   };
   return (
@@ -61,6 +79,7 @@ const Register = () => {
                 placeholder="Password"
                 required
               />
+              {error && <p className="text-red-600">{error}</p>}
               <div className="text-center">
                 <a className="link link-hover r">Forgot password?</a>
               </div>

@@ -53,10 +53,10 @@ const PlantDetailsCard = ({ plant }) => {
 
       {/* Book consultation */}
       <section className="mt-10">
-        <h3 className="text-2xl font-bold mb-3">Book Consultation</h3>
+        <h3 className="text-xl lg:text-2xl font-bold mb-3">Book Consultation</h3>
         <form
           onSubmit={handleBooking}
-          className=" card bg-base-100 shadow-lg p-6 space-y-4 mx-w-xl"
+          className=" card bg-base-100 shadow-lg p-6 space-y-4 w-mx-xl lg:w-2/3"
         >
           {/* Name Field */}
           <div>
