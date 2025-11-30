@@ -1,9 +1,11 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
   const { logIn } = use(AuthContext);
+  const location = useLocation();
+   console.log(location)
   const handleLogin = (e) => {
     e.preventDefault();
 

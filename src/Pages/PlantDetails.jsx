@@ -52,17 +52,7 @@ export default PlantDetails;
 //     form.reset();
 //   };
 
-//   return (
-//     <div className="max-w-5xl mx-auto p-6">
-//       {/* --------- PLANT DETAILS --------- */}
-//       <div className="card lg:card-side bg-base-100 shadow-xl">
-//         <figure className="lg:w-1/2 w-full">
-//           <img
-//             src={plant.image}
-//             alt={plant.name}
-//             className="w-full h-full object-cover rounded-lg"
-//           />
-//         </figure>
+//   
 
 //         <div className="card-body lg:w-1/2 w-full">
 //           <h2 className="card-title text-3xl font-bold">{plant.name}</h2>

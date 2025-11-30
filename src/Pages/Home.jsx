@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { Navigate, useLoaderData } from "react-router";
 
 import TopRatedPlants from "../Components/TopRatedPlants";
 import HeroSection from "../Components/HeroSection";
@@ -12,6 +12,7 @@ const Home = () => {
       <HeroSection></HeroSection>
       {/* top rated plants */}
       <TopRatedPlants plants={plants} />
+      <Navigate to="/"></Navigate>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import PlantDetails from "../Pages/PlantDetails";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "../provider/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/plantDetails/:plantId",
-        element: <PlantDetails></PlantDetails>,
+        element: <PrivateRoute>
+          <PlantDetails></PlantDetails>
+        </PrivateRoute>,
         loader: () => fetch("/plants.json").then((res) => res.json()),
       },
 
