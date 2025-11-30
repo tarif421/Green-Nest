@@ -1,11 +1,13 @@
 import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const Register = () => {
   const { createUser, setUser } = use(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [showPassword, setShowPass] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const Register = () => {
     }
 
     if (!/[A-Z]/.test(password)) {
-      setError("Password must contain least one uppercase letter");
+      setError("Password must contain at least one uppercase letter");
       return;
     }
 
@@ -71,20 +73,27 @@ const Register = () => {
                 placeholder="Email"
                 required
               />
-              <label className="label">Password</label>
-              <input
-                type="password"
-                name="password"
-                className="input"
-                placeholder="Password"
-                required
-              />
+              <div className="relative">
+                <label className="label">Password</label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="input"
+                  placeholder="Password"
+                  name="password"
+                />
+                <span
+                  className="absolute right-5 top-[31px] cursor-pointer text-xl text-gray-500"
+                  onClick={() => setShowPass(!showPassword)}
+                >
+                  {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+                </span>
+              </div>
               {error && <p className="text-red-600">{error}</p>}
               <div className="text-center">
                 <a className="link link-hover r">Forgot password?</a>
               </div>
 
-              <button type="submit" className="btn btn-neutral mt-4">
+              <button type="submit" className="btn btn-success text-white mt-4">
                 Register
               </button>
               <p className="font-semibold text-center pt-5">

@@ -1,6 +1,7 @@
 
 import React from "react";
-import toast from "react-hot-toast";
+  import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const PlantDetailsCard = ({ plant }) => {
@@ -20,9 +21,13 @@ const PlantDetailsCard = ({ plant }) => {
     toast.success("Consultation booked successfully!");
     form.reset();
   };
+
+     
   return (
     <div className="mx-w-[1280px] mx-auto p-4 sm:p-6 lg:p-10">
+
       {/*plants details card  */}
+       <ToastContainer />
       <section className="flex  flex-col lg:flex-row items-center lg:items-start  gap-6 lg:gap-12">
         <div className=" lg:ml-40">
           <img
@@ -68,8 +73,9 @@ const PlantDetailsCard = ({ plant }) => {
               type="text"
               name="name"
               placeholder="Your Name"
-              required
+              
             />
+           
           </div>
 
           {/* Email field */}
@@ -82,11 +88,11 @@ const PlantDetailsCard = ({ plant }) => {
               type="email"
               name="email"
               placeholder="Email address"
-              required
+              
             />
           </div>
           {/* button */}
-          <button className="btn btn-success w-full text-white">
+          <button   className="btn btn-success w-full text-white">
             Book Now
           </button>
         </form>
