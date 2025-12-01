@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2025-12-01T00:00:00+06:00",
+  "isSample": true,
+  "plants": [
+    {
+      "id": "p001",
+      "commonName": "Snake Plant",
+      "scientificName": "Sansevieria trifasciata",
+      "watering": {
+        "frequency": "every 3-6 weeks",
+        "amount": "moderate to low (allow soil to dry completely)",
+        "method": "water deeply then drain excess; avoid standing water",
+        "note": "Overwatering is the most common issue"
+      },
+      "sunlight": {
+        "exposure": "indirect to low",
+        "idealHours": "2-6",
+        "placement": "north or east-facing window; tolerates low light"
+      },
+      "fertilizing": {
+        "type": "balanced liquid fertilizer (10-10-10)",
+        "schedule": "every 6-8 weeks during growing season (spring-summer)",
+        "application": "dilute to half strength",
+        "note": "Skip feeding in winter"
+      },
+      "difficulty": "easy",
+      "notes": "Great beginner plant; slow grower"
+    },
+    {
+      "id": "p002",
+      "commonName": "Fiddle Leaf Fig",
+      "scientificName": "Ficus lyrata",
+      "watering": {
+        "frequency": "weekly (may vary)",
+        "amount": "evenly moist but not waterlogged",
+        "method": "water until runoff; allow top 2 cm soil to dry",
+        "note": "Sensitive to under- and over-watering"
+      },
+      "sunlight": {
+        "exposure": "bright indirect",
+        "idealHours": "6-8",
+        "placement": "east or west-facing window with filtered light"
+      },
+      "fertilizing": {
+        "type": "high-nitrogen houseplant fertilizer",
+        "schedule": "monthly during spring and summer",
+        "application": "follow label, avoid overfeeding",
+        "note": "Reduce frequency in fall/winter"
+      },
+      "difficulty": "moderate",
+      "notes": "Rotate regularly for even growth"
+    },
+    {
+      "id": "p003",
+      "commonName": "Spider Plant",
+      "scientificName": "Chlorophytum comosum",
+      "watering": {
+        "frequency": "every 1-2 weeks",
+        "amount": "keep soil slightly moist; tolerant of brief dryness",
+        "method": "thorough soak then allow topsoil to dry",
+        "note": "Chlorine in tap water can cause brown tips — use filtered or let sit"
+      },
+      "sunlight": {
+        "exposure": "bright indirect",
+        "idealHours": "4-6",
+        "placement": "hang near east/west window"
+      },
+      "fertilizing": {
+        "type": "balanced liquid fertilizer",
+        "schedule": "every 4-6 weeks during growing season",
+        "application": "half-strength recommended",
+        "note": "Too much fertilizer causes leaf burn"
+      },
+      "difficulty": "easy",
+      "notes": "Produces attractive plantlets; good air purifier"
+    },
+    {
+      "id": "p004",
+      "commonName": "Monstera (Swiss Cheese Plant)",
+      "scientificName": "Monstera deliciosa",
+      "watering": {
+        "frequency": "every 1-2 weeks",
+        "amount": "moderate — allow top 3-4 cm to dry",
+        "method": "water evenly, avoid soggy soil",
+        "note": "Prefer humid conditions"
+      },
+      "sunlight": {
+        "exposure": "bright indirect",
+        "idealHours": "6-8",
+        "placement": "near window with diffused light"
+      },
+      "fertilizing": {
+        "type": "balanced slow-release or liquid fertilizer",
+        "schedule": "every 6-8 weeks in growing season",
+        "application": "follow product directions",
+        "note": "Support with a moss pole for climbing varieties"
+      },
+      "difficulty": "moderate",
+      "notes": "Large leaves may develop splits with age/space"
+    },
+    {
+      "id": "p005",
+      "commonName": "Succulent Mix",
+      "scientificName": "Mixed (Echeveria, Sedum, Haworthia)",
+      "watering": {
+        "frequency": "every 2-4 weeks",
+        "amount": "light; water sparingly, allow soil to dry completely",
+        "method": "soak and dry method (thorough soak, then dry out)",
+        "note": "Ensure excellent drainage"
+      },
+      "sunlight": {
+        "exposure": "full to bright direct",
+        "idealHours": "6-10",
+        "placement": "south-facing window or bright balcony"
+      },
+      "fertilizing": {
+        "type": "low-nitrogen cactus/succulent fertilizer",
+        "schedule": "once every 2-3 months during growth",
+        "application": "very dilute",
+        "note": "Avoid fertilizing in dormant season"
+      },
+      "difficulty": "easy",
+      "notes": "Prone to rot if overwatered"
+    },
+    {
+      "id": "p006",
+      "commonName": "Basil (Herb)",
+      "scientificName": "Ocimum basilicum",
+      "watering": {
+        "frequency": "every 2-3 days (warm weather)",
+        "amount": "keep soil consistently moist but not soggy",
+        "method": "top-watering; avoid wetting leaves repeatedly",
+        "note": "Reduce frequency in cooler weather"
+      },
+      "sunlight": {
+        "exposure": "full sun",
+        "idealHours": "6-8",
+        "placement": "south-facing window or sunny balcony",
+        "note": "Insufficient light causes leggy growth"
+      },
+      "fertilizing": {
+        "type": "balanced liquid fertilizer or organic fish emulsion",
+        "schedule": "every 3-4 weeks during active growth",
+        "application": "weak solution",
+        "note": "Harvest frequently to encourage bushiness"
+      },
+      "difficulty": "easy",
+      "notes": "Warm, regular water and light = best flavor"
+    },
+    {
+      "id": "p007",
+      "commonName": "ZZ Plant",
+      "scientificName": "Zamioculcas zamiifolia",
+      "watering": {
+        "frequency": "every 3-4 weeks",
+        "amount": "low; tolerate long dry periods",
+        "method": "light watering; let soil dry between waterings",
+        "note": "Stores water in rhizomes — overwatering causes root rot"
+      },
+      "sunlight": {
+        "exposure": "low to bright indirect",
+        "idealHours": "2-6",
+        "placement": "office desks, low-light corners"
+      },
+      "fertilizing": {
+        "type": "balanced houseplant fertilizer",
+        "schedule": "every 8-12 weeks in growing season",
+        "application": "very dilute",
+        "note": "Rare feeder; slow grower"
+      },
+      "difficulty": "very easy",
+      "notes": "Excellent for forgetful plant owners"
+    },
+    {
+      "id": "p008",
+      "commonName": "Peace Lily",
+      "scientificName": "Spathiphyllum spp.",
+      "watering": {
+        "frequency": "weekly (or when leaves droop)",
+        "amount": "keep soil evenly moist",
+        "method": "water thoroughly, empty saucer after 30 minutes",
+        "note": "Leaves droop when thirsty but recover quickly after watering"
+      },
+      "sunlight": {
+        "exposure": "low to bright indirect",
+        "idealHours": "3-6",
+        "placement": "east-facing window or shaded spot"
+      },
+      "fertilizing": {
+        "type": "low-nitrogen liquid fertilizer",
+        "schedule": "every 6-8 weeks during spring-summer",
+        "application": "half-strength recommended",
+        "note": "Too much fertilizer causes brown leaf tips"
+      },
+      "difficulty": "easy",
+      "notes": "Also helps purify indoor air; remove spent flowers"
+    },
+    {
+      "id": "p009",
+      "commonName": "Pothos (Golden)",
+      "scientificName": "Epipremnum aureum",
+      "watering": {
+        "frequency": "every 1-2 weeks",
+        "amount": "moderate — allow top 2 cm to dry",
+        "method": "water thoroughly; good drainage",
+        "note": "Tolerant of occasional neglect"
+      },
+      "sunlight": {
+        "exposure": "low to bright indirect",
+        "idealHours": "3-8",
+        "placement": "versatile — can trail from shelves or hangers"
+      },
+      "fertilizing": {
+        "type": "balanced liquid fertilizer",
+        "schedule": "every 6-8 weeks during growth",
+        "application": "standard dilution",
+        "note": "Prune to control leggy growth"
+      },
+      "difficulty": "very easy",
+      "notes": "Fast grower; great for beginners"
+    }
+  ]
+}
