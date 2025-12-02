@@ -18,7 +18,7 @@ const PCTipsCard = ({ tips }) => {
             key={plant.id}
             className="border p-4 rounded-lg shadow-sm bg-white hover:shadow-md transition"
           >
-            <h2 className="text-lg font-semibold mb-1">{plant.commonName}</h2>
+            <h2 className="text-lg text-teal-700 font-semibold mb-1">{plant.commonName}</h2>
             <p className="text-xs text-gray-500 italic mb-2">
               {plant.scientificName}
             </p>

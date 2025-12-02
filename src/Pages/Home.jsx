@@ -1,9 +1,10 @@
 import React from "react";
-import { Navigate, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 
 import TopRatedPlants from "../Components/TopRatedPlants";
 import HeroSection from "../Components/HeroSection";
 import PCTips from "../PlantCareTips/PCTips";
+import Expert from "../PlantExpart/Expert";
 
 const Home = () => {
   const plants = useLoaderData();
@@ -11,10 +12,11 @@ const Home = () => {
   return (
     <div>
       <HeroSection></HeroSection>
-      {/* top rated plants */}
+
       <TopRatedPlants plants={plants} />
       <PCTips></PCTips>
-      <Navigate to="/"></Navigate>
+<Expert></Expert>
+      {/* <Navigate to="/"></Navigate> */}
     </div>
   );
 };

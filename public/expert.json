@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Ariana Bloom",
+    "specialization": "Indoor Plant Care & Soil Nutrition",
+    "image": "https://img.freepik.com/free-photo/young-woman-holding-potted-plant_23-2147882154.jpg?semt=ais_hybrid&w=740&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Liam Greenfield",
+    "specialization": "Succulents & Low-Water Plants",
+    "image": "https://img.freepik.com/premium-photo/botanist-watering-pant-greenhouse_1048944-6839262.jpg?semt=ais_hybrid&w=740&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Maya Fernwood",
+    "specialization": "Tropical Plants & Humidity Control",
+    "image": "https://img.freepik.com/free-photo/person-doing-day-day-activity-while-waring-string-finger-remember-something-important_23-2151062315.jpg?semt=ais_hybrid&w=740&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Ethan Leafstone",
+    "specialization": "Plant Disease Diagnosis & Pest Control",
+    "image": "https://img.freepik.com/free-photo/plant-shop-worker-takes-photo-potted-plants_53876-143254.jpg?semt=ais_hybrid&w=740&q=80"
+  }
+]
