@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser, setUser } = use(AuthContext);
@@ -20,28 +21,46 @@ const Register = () => {
     // console.log(name, photo, email, password);
 
     if (password.length < 6) {
-      setError("password must be at least 6 characters long");
+      setError(
+        "password must be at least 6 characters , one uppercase and one lowercase"
+      );
+      toast.error("Registration Failed");
+
       return;
     }
 
     if (!/[A-Z]/.test(password)) {
-      setError("Password must contain at least one uppercase letter");
+      setError(
+        "password must be at least 6 characters , one uppercase and one lowercase"
+      );
+      toast.error("Registration Failed");
+
       return;
     }
 
     if (!/[a-z]/.test(password)) {
-      setError("Password must contain at least one lowercase letter");
+      setError(
+        "password must be at least 6 characters , one uppercase and one lowercase"
+      );
+      toast.error("Registration Failed");
+
       return;
     }
 
     createUser(email, password)
       .then((result) => {
+        toast.success("Registration Successful");
         const user = result.user;
+
         setUser(user);
         navigate("/");
       })
-      .catch((error) => {
-        setError(error.massage);
+      .catch((err) => {
+        setError("Email-already used");
+
+        if (err.code === "auth/email-already-in-use") {
+          toast.error("This email is already registered!");
+        }
       });
   };
   return (
@@ -71,6 +90,7 @@ const Register = () => {
                 name="email"
                 className="input"
                 placeholder="Email"
+                autoComplete="new-email"
                 required
               />
               <div className="relative">
@@ -80,6 +100,8 @@ const Register = () => {
                   className="input"
                   placeholder="Password"
                   name="password"
+                  autoComplete="new-password"
+                  required
                 />
                 <span
                   className="absolute right-5 top-[31px] cursor-pointer text-xl text-gray-500"

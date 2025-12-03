@@ -17,7 +17,7 @@ const Decor = () => {
       <h2 className="  py-5 bg-green-50 w-[300px] mx-auto mt-20 rounded-2xl shadow-2xs text-3xl font-bold flex justify-center text-yellow-700 ">
         Eco Decor Ideas
       </h2>
-      <div className="grid sm:grid-cols-1 lg:mr-20 lg:ml-20 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto mt-7 p-7 ">
+      <div className="grid grid-cols-2 lg:mr-20 lg:ml-20 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto mt-7 p-2 lg:p-7 ">
         {showDecor.map((item) => (
           <DecorCard item={item} key={item.id}></DecorCard>
         ))}

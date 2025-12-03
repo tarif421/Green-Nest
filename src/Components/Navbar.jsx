@@ -4,6 +4,7 @@ import { Link } from "react-router";
 
 import { NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -11,7 +12,7 @@ const Navbar = () => {
     // console.log("user trying to be logout");
     logOut()
       .then(() => {
-        alert("logged out successfully");
+        toast.success("User Logged out ");
       })
       .catch((error) => {
         console.log(error);
@@ -31,9 +32,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar  bg-base-100  shadow-sm flex ">
+    <div className="navbar  bg-base-100  shadow-sm flex   ">
      
-      <div className="navbar-start">
+      <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg

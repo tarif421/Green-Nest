@@ -27,7 +27,7 @@ const PlantDetailsCard = ({ plant }) => {
     <div className="mx-w-[1280px] mx-auto p-4 sm:p-6 lg:p-10">
 
       {/*plants details card  */}
-       <ToastContainer />
+       
       <section className="flex  flex-col lg:flex-row items-center lg:items-start  gap-6 lg:gap-12">
         <div className=" lg:ml-40">
           <img
