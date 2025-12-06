@@ -8,17 +8,17 @@ const PCTipsCard = ({ tips }) => {
     return <p>Loading tips...</p>;
   }
 
-  const visibleTips = showAll ? tips : tips.slice(0, 3);
+  const visibleTips = showAll ? tips : tips.slice(0, 2);
 
   return (
     <>
-      <div className="grid sm:grid-cols-1 lg:mr-20 lg:ml-20 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto mt-7">
+      <div className="grid grid-cols-2 lg:mr-20 lg:ml-20 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto mt-7">
         {visibleTips.map((plant) => (
           <div
             key={plant.id}
             className="border p-4 rounded-lg shadow-sm bg-white hover:shadow-md transition"
           >
-            <h2 className="text-lg text-teal-700 font-semibold mb-1">{plant.commonName}</h2>
+            <h2 className="text-lg text-teal-700 font-lg:font-semibold mb-1">{plant.commonName}</h2>
             <p className="text-xs text-gray-500 italic mb-2">
               {plant.scientificName}
             </p>

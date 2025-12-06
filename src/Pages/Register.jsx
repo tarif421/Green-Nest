@@ -47,20 +47,18 @@ const Register = () => {
       return;
     }
 
-    createUser(email, password)
+    createUser(email, password, name, photo)
       .then((result) => {
-        toast.success("Registration Successful");
+  
         const user = result.user;
 
-        setUser(user);
+        setUser(user); 
         navigate("/");
       })
-      .catch((err) => {
-        setError("Email-already used");
+      .catch(() => {
+        setError();
 
-        if (err.code === "auth/email-already-in-use") {
-          toast.error("This email is already registered!");
-        }
+       
       });
   };
   return (
@@ -74,7 +72,9 @@ const Register = () => {
             <fieldset className="fieldset">
               {/* name */}
               <label className="label">Name</label>
-              <input type="text" name="name" className="input" required />
+              <input type="text" name="name" className="input"
+              placeholder= "Name"
+              required />
               {/* photo url */}
               <label className="label">Photo url</label>
               <input
@@ -104,7 +104,7 @@ const Register = () => {
                   required
                 />
                 <span
-                  className="absolute right-5 top-[31px] cursor-pointer text-xl text-gray-500"
+                  className="absolute right-5 top-[31px] cursor-pointer text-xl text-gray-500 z-50"
                   onClick={() => setShowPass(!showPassword)}
                 >
                   {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}

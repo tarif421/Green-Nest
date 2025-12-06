@@ -6,8 +6,8 @@ const TopPlantCard = ({ plant }) => {
   const { image, plantName, rating, price, plantId } = plant;
   return (
     <section className="">
-      <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 p-5">
-        <img src={image} alt={plantName} className="w-full h-48 object-cover" />
+      <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 p-2 lg:p-5">
+        <img src={image} alt={plantName} className="w-full h-30 lg:h-48 object-cover" />
         <div className="p-4">
           <h2 className="text-xl font-semibold text-green-700 mb-2">
             {plantName}

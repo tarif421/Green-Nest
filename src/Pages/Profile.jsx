@@ -8,55 +8,51 @@ import "react-toastify/dist/ReactToastify.css";
 const MyProfile = () => {
   const { user, setUser } = useContext(AuthContext);
 
-  const [name, setName] = useState();
-  const [photo, setPhoto] = useState();
+  const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("");
 
   useEffect(() => {
     if (user) {
       setName(user.displayName || "");
-      setPhoto(
-        user.photoURL ||
-          ""
-      );
+      setPhoto(user.photoURL || "https://via.placeholder.com/88");
     }
   }, [user]);
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    
 
-    updateProfile(user, {
-      displayName: name,
-      photoURL: photo,
-    })
-      .then(() => {
-        toast.success("Profile updated!");
-        setUser({ ...user, displayName: name, photoURL: photo });
-      })
-      .catch((err) => toast.error(err.message));
+    if (!user) return toast.error("User not found!");
+
+    try {
+      await updateProfile(user, {
+        displayName: name,
+        photoURL: photo,
+      });
+
+      setUser({ ...user, displayName: name, photoURL: photo });
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
 
   return (
     <div className="max-w-lg mx-auto p-6">
-      <ToastContainer />
       <h2 className="text-3xl font-bold mb-6 text-center">My Profile</h2>
 
       <div className="card bg-base-100 shadow-xl p-6 mb-8">
         <div className="flex flex-col items-center">
           <img
-            src={
-              user
-                ? user.photoURL
-                : ""
-            }
+            src={photo}
             alt="Profile"
             className="w-24 h-24 rounded-full border mb-4 object-cover"
           />
 
-          <h3 className="text-xl font-semibold">{user?.displayName}</h3>
+          <h3 className="text-xl font-semibold">{name}</h3>
           <p className="text-gray-500">{user?.email}</p>
         </div>
       </div>
+
+      {/*  */}
 
       <form
         onSubmit={handleUpdate}
@@ -85,9 +81,9 @@ const MyProfile = () => {
             onChange={(e) => setPhoto(e.target.value)}
           />
         </div>
-
-        <button className="btn btn-primary w-full">Update Profile</button>
       </form>
+
+      <ToastContainer />
     </div>
   );
 };

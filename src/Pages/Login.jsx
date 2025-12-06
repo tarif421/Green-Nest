@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { logIn, signInWithGoogle } = use(AuthContext);
@@ -38,6 +39,7 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
+        toast.success("login Successful")
         console.log(result.user);
         navigate(location?.state || "/");
       })
@@ -62,6 +64,7 @@ const Login = () => {
                 placeholder="Email"
                 name="email"
                 autoComplete="new-email"
+                required
               />
               {/* password */}
               <div className="relative">
@@ -72,9 +75,10 @@ const Login = () => {
                   placeholder="Password"
                   name="password"
                   autoComplete="new-password"
+                  required
                 />
                 <span
-                  className="absolute right-5 top-[31px] cursor-pointer text-xl text-gray-500"
+                  className="absolute right-5 top-[31px] cursor-pointer text-xl text-gray-500 z-50"
                   onClick={() => setShowPass(!showPassword)}
                 >
                   {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}

@@ -14,10 +14,10 @@ const Decor = () => {
   }, []);
   return (
     <>
-      <h2 className="  py-5 bg-green-50 w-[300px] mx-auto mt-20 rounded-2xl shadow-2xs text-3xl font-bold flex justify-center text-yellow-700 ">
+      <h2 className=" py-3 lg:py-5 bg-green-50 w-[180px] lg:w-[300px] mx-auto mt-20 rounded-2xl shadow-2xs text-xl lg:text-3xl font-bold flex justify-center text-yellow-700 ">
         Eco Decor Ideas
       </h2>
-      <div className="grid grid-cols-2 lg:mr-20 lg:ml-20 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto mt-7 p-2 lg:p-7 ">
+      <div className="grid grid-cols-2 lg:mr-20 lg:ml-20 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:gap-6 mx-auto mt-7 p-4 lg:p-5 ">
         {showDecor.map((item) => (
           <DecorCard item={item} key={item.id}></DecorCard>
         ))}

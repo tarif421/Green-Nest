@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
   const handleLogout = () => {
-    // console.log("user trying to be logout");
+    
     logOut()
       .then(() => {
         toast.success("User Logged out ");
@@ -80,7 +80,7 @@ const Navbar = () => {
         ) : (
           <Link to="/auth/login">
             <button  className="btn bg-teal-100 text-green hover:bg-teal-400">
-              Login
+              Login  
             </button>
           </Link>
         )}
