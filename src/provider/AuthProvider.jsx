@@ -12,9 +12,7 @@ import {
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 
-
 const googleProvider = new GoogleAuthProvider();
-
 
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
@@ -23,20 +21,19 @@ const AuthProvider = ({ children }) => {
 
   // register
   const createUser = async (email, password, name, photo) => {
-  setLoading(true);
+    setLoading(true);
 
-  const result = await createUserWithEmailAndPassword(auth, email, password);
+    const result = await createUserWithEmailAndPassword(auth, email, password);
 
-  await updateProfile(result.user, {
-    displayName: name,
-    photoURL: photo || "https://via.placeholder.com/150",
-  });
-  
+    await updateProfile(result.user, {
+      displayName: name,
+      photoURL: photo || "https://via.placeholder.com/150",
+    });
 
-  setUser({ ...result.user, displayName: name, photoURL: photo });
+    setUser({ ...result.user, displayName: name, photoURL: photo });
 
-  return result;
-};
+    return result;
+  };
   // const createUser = (email, password) => {
   //   setLoading(true);
 
@@ -68,6 +65,11 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  // forget pass
+  // const forgetPass = (email) => {
+  //   return sendPasswordResetEmail(auth, email);
+  // };
+
   // authDaTA
   const authData = {
     user,
@@ -78,6 +80,7 @@ const AuthProvider = ({ children }) => {
     logIn,
     loading,
     setLoading,
+    auth,
   };
   return <AuthContext value={authData}>{children}</AuthContext>;
 };

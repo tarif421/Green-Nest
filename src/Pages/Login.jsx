@@ -1,12 +1,16 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { toast } from "react-toastify";
+import { sendPasswordResetEmail } from "firebase/auth";
+
 
 const Login = () => {
-  const { logIn, signInWithGoogle } = use(AuthContext);
+  const { logIn, signInWithGoogle, auth } = use(AuthContext);
+  const emailRef = useRef();
 
+  // const [email, setEmail] = useState("")
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -39,7 +43,7 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        toast.success("login Successful")
+        toast.success("login Successful");
         console.log(result.user);
         navigate(location?.state || "/");
       })
@@ -47,6 +51,25 @@ const Login = () => {
         console.log(error);
       });
   };
+
+ const handleForgetPassword = () => {
+  const email = emailRef.current.value;
+
+  if (!email) {
+    toast.error("Please enter your email first");
+    return;
+  }
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      toast.success("Check your email for reset password");
+    })
+    .catch((error) => {
+      toast.error(error.message);
+    });
+};
+
+  // console.log(email)
   return (
     <>
       <div className=" flex justify-center min-h-screen  items-center ">
@@ -55,7 +78,7 @@ const Login = () => {
             Login your account
           </h2>
           <form onSubmit={handleLogin} className="card-body">
-            <fieldset className="fieldset" >
+            <fieldset className="fieldset">
               {/* email */}
               <label className="label">Email</label>
               <input
@@ -63,6 +86,9 @@ const Login = () => {
                 className="input"
                 placeholder="Email"
                 name="email"
+                ref={emailRef}
+                // value={email}
+                // onChange={(e) => setEmail(e.target.value)}
                 autoComplete="new-email"
                 required
               />
@@ -86,7 +112,13 @@ const Login = () => {
               </div>
 
               <div className="text-center">
-                <a className="link link-hover r">Forgot password?</a>
+                <button
+                  onClick={handleForgetPassword}
+                  type="button"
+                  className="underline cursor-pointer hover:text-blue-600"
+                >
+                  Forget Password
+                </button>
               </div>
 
               {error && <p className="text-red-600">{error}</p>}
