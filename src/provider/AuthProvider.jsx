@@ -65,10 +65,6 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // forget pass
-  // const forgetPass = (email) => {
-  //   return sendPasswordResetEmail(auth, email);
-  // };
 
   // authDaTA
   const authData = {

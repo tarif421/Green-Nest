@@ -1,8 +1,9 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const PlantsCard = ({ plant }) => {
-  const { plantName, category, price, rating, description, image } = plant;
+  const { plantName, plantId,  price, rating, description, image } = plant;
   return (
     <>
       <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300 p-2 lg:p-5 ">
@@ -19,10 +20,14 @@ const PlantsCard = ({ plant }) => {
             </p>
           </div>
 
+          
           <p className="text-sm text-gray-600   ">
             {description.slice(0, 100)}...{" "}
-            <p className="text-black font-semibold cursor-pointer">Read More</p>
+           <Link to={`/plantDetails/${plantId}`} >
+            <p className="text-black font-semibold cursor-pointer">See More</p>
+           </Link>
           </p>
+          
         </div>
       </div>
     </>
